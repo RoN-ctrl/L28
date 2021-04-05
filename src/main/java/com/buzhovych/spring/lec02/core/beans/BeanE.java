@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-public class BeanE {
+public class BeanE implements ParentBean {
     private String name;
     private int value;
 
@@ -22,6 +22,26 @@ public class BeanE {
     @PreDestroy
     public void customPreDestroy() {
         System.out.println("beanE.customPreDestroy()");
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override

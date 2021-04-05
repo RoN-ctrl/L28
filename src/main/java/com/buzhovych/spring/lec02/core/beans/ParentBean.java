@@ -1,22 +1,12 @@
 package com.buzhovych.spring.lec02.core.beans;
 
-public abstract class ParentBean {
-    private String name;
-    private int value;
+public interface ParentBean {
+    String getName();
 
-    public String getName() {
-        return name;
-    }
+    void setName(String name);
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    int getValue();
 
-    public int getValue() {
-        return value;
-    }
+    void setValue(int value);
 
-    public void setValue(int value) {
-        this.value = value;
-    }
 }

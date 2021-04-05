@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @PropertySource("classpath:application.properties")
-public class BeanC {
+public class BeanC implements ParentBean{
 
     @Value("${beanC.name}")
     private String name;
@@ -24,6 +24,26 @@ public class BeanC {
 
     private void customDestroy() {
         System.out.println("beanC.customDestroy()");
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override

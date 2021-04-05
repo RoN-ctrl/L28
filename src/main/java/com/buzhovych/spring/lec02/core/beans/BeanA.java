@@ -5,7 +5,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanA implements InitializingBean, DisposableBean {
+public class BeanA implements ParentBean, InitializingBean, DisposableBean {
     private String name;
     private int value;
 
@@ -21,6 +21,26 @@ public class BeanA implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
         System.out.println("beanA.DisposableBean --> destroy()");
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override
