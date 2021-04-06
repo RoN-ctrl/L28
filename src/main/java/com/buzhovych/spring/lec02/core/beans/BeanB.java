@@ -22,6 +22,10 @@ public class BeanB implements ParentBean {
         System.out.println("beanB.customInit()");
     }
 
+    private void postProcessCustomInit() {
+        System.out.println("beanB.postProcessCustomInit()");
+    }
+
     private void customDestroy() {
         System.out.println("beanB.customDestroy()");
     }

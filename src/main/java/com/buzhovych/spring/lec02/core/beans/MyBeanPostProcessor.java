@@ -5,7 +5,11 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MySecondBeanPostProcessor implements BeanPostProcessor {
+public class MyBeanPostProcessor implements BeanPostProcessor {
+
+    public MyBeanPostProcessor() {
+        System.out.println("MyBeanPostProcessor was created");
+    }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {

@@ -2,13 +2,12 @@ package com.buzhovych.spring.lec02.core;
 
 import com.buzhovych.spring.lec02.core.beans.ParentBean;
 import com.buzhovych.spring.lec02.core.config.AppConfig;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         for (String beanDefinitionName : context.getBeanDefinitionNames()) {
             if (context.getBean(beanDefinitionName) instanceof ParentBean) {
@@ -17,6 +16,8 @@ public class Main {
             }
             System.out.println(beanDefinitionName);
         }
+
+        context.close();
     }
 
 }

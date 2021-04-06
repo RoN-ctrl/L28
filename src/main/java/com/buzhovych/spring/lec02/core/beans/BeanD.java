@@ -11,7 +11,7 @@ public class BeanD implements ParentBean {
     @Value("${beanD.name}")
     private String name;
 
-    @Value("${beanC.value}")
+    @Value("${beanD.value}")
     private int value;
 
     public BeanD() {
