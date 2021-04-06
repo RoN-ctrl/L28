@@ -16,9 +16,11 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
         if (bean instanceof ParentBean) {
             ParentBean castedBean = (ParentBean) bean;
             if (castedBean.getName() == null) {
+                System.out.println("postProcessAfterInitialization --> Illegal name for " + beanName + ", assigned by default");
                 castedBean.setName("Unknown name");
             }
             if (castedBean.getValue() < 0) {
+                System.out.println("postProcessAfterInitialization --> Illegal value for " + beanName + ", assigned by default");
                 castedBean.setValue(0);
             }
         }
